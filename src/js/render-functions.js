@@ -59,5 +59,3 @@ export function showLoader() {
 export function hideLoader() {
   loader.style.display = 'none';
 }
-
-hideLoader();

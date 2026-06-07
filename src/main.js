@@ -18,9 +18,9 @@ form.addEventListener('submit', e => {
     return;
   }
 
+  clearGallery();
   showLoader();
   const searchResponse = getImagesByQuery(term);
-  clearGallery();
   searchResponse
     .then(items => {
       if (items.length) {
