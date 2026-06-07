@@ -35,7 +35,10 @@ form.addEventListener('submit', e => {
       hideLoader();
     })
     .catch(e => {
-      iziToast.error(`Error happened: ${e.message}`);
+      iziToast.error({
+        message: `Error happened: ${typeof e === 'string' ? e : e.message}`,
+        position: 'topRight',
+      });
       hideLoader();
     });
 });
