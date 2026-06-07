@@ -1,10 +1,10 @@
-import{S as p,a as f,i as l}from"./assets/vendor-BTRK9AdA.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))e(s);new MutationObserver(s=>{for(const n of s)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&e(r)}).observe(document,{childList:!0,subtree:!0});function t(s){const n={};return s.integrity&&(n.integrity=s.integrity),s.referrerPolicy&&(n.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?n.credentials="include":s.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function e(s){if(s.ep)return;s.ep=!0;const n=t(s);fetch(s.href,n)}})();const u=new p(".gallery a",{captionsData:"alt",captionDelay:250}),m=document.querySelector(".gallery"),d=document.querySelector(".loader");function g(a){const o=a.map(t=>`<li class="gallery-item">
-        <a class="gallery-link" href="${t.original}">
+import{S as f,a as p,i as l}from"./assets/vendor-BTRK9AdA.js";(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function t(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(e){if(e.ep)return;e.ep=!0;const s=t(e);fetch(e.href,s)}})();const u=new f(".gallery a",{captionsData:"alt",captionDelay:250}),m=document.querySelector(".gallery"),d=document.querySelector(".loader");function g(r){const n=r.map(t=>`<li class="gallery-item">
+        <a class="gallery-link" href="${t.largeImageURL}">
             <img
             class="gallery-image"
-            src="${t.preview}"
-            data-source="${t.original}"
-            alt="${t.description}"
+            src="${t.webformatURL}"
+            data-source="${t.largeImageURL}"
+            alt="${t.tags}"
             width="350" height="200"
             />
             <div class="image-info">
@@ -27,5 +27,5 @@ import{S as p,a as f,i as l}from"./assets/vendor-BTRK9AdA.js";(function(){const 
             </div>
         </a>
         </li>`).join(`
-`);m.innerHTML=o,u.refresh()}function y(){m.innerHTML=""}function h(){d.style.display=""}function i(){d.style.display="none"}i();const v="https://pixabay.com/api/",L="56207103-4b28cc7dd0dd3e21e461efeb9";function b(a){const o=new URLSearchParams({key:L,q:a,image_type:"photo",orientation:"horizontal",safesearch:!0}).toString();return f.get(`${v}?${o}`).then(t=>t.data.hits.map(e=>({preview:e.webformatURL,original:e.largeImageURL,description:e.tags,likes:e.likes,views:e.views,comments:e.comments,downloads:e.downloads})))}const c=document.querySelector(".form");c.addEventListener("submit",a=>{a.preventDefault();const o=c.elements["search-text"].value.trim();if(!o)return;const t=b(o);h(),y(),t.then(e=>{e.length?g(e):l.error({message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight"}),i()}).catch(e=>{l.error({message:`Error happened: ${typeof e=="string"?e:e.message}`,position:"topRight"}),i()})});
+`);m.innerHTML=n,u.refresh()}function y(){m.innerHTML=""}function h(){d.style.display=""}function i(){d.style.display="none"}i();const L="https://pixabay.com/api/",b="56207103-4b28cc7dd0dd3e21e461efeb9";function v(r){const n=new URLSearchParams({key:b,q:r,image_type:"photo",orientation:"horizontal",safesearch:!0}).toString();return p.get(`${L}?${n}`).then(t=>t.data.hits)}const c=document.querySelector(".form");c.addEventListener("submit",r=>{r.preventDefault();const n=c.elements["search-text"].value.trim();if(!n)return;h();const t=v(n);y(),t.then(a=>{a.length?g(a):l.error({message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight"}),i()}).catch(a=>{l.error({message:`Error happened: ${typeof a=="string"?a:a.message}`,position:"topRight"}),i()})});
 //# sourceMappingURL=index.js.map
