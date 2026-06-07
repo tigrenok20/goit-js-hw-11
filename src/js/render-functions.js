@@ -19,8 +19,26 @@ export function createGallery(images) {
             src="${image.preview}"
             data-source="${image.original}"
             alt="${image.description}"
-            width="360" height="200"
+            width="350" height="200"
             />
+            <div class="image-info">
+              <div class="image-info-element">
+                <span class="image-info-element-label">Likes</span>
+                <span class="image-info-element-counter">${image.likes}</span>
+              </div>
+              <div class="image-info-element">
+                <span class="image-info-element-label">Views</span>
+                <span class="image-info-element-counter">${image.views}</span>
+              </div>
+              <div class="image-info-element">
+                <span class="image-info-element-label">Comments</span>
+                <span class="image-info-element-counter">${image.comments}</span>
+              </div>
+              <div class="image-info-element">
+                <span class="image-info-element-label">Downloads</span>
+                <span class="image-info-element-counter">${image.downloads}</span>
+              </div>
+            </div>
         </a>
         </li>`
     )

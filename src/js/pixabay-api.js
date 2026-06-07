@@ -35,6 +35,10 @@ export function getImagesByQuery(query) {
       preview: hit.webformatURL,
       original: hit.largeImageURL,
       description: hit.tags,
+      likes: hit.likes,
+      views: hit.views,
+      comments: hit.comments,
+      downloads: hit.downloads,
     }))
   );
 }
