@@ -18,8 +18,8 @@ form.addEventListener('submit', e => {
     return;
   }
 
-  const searchResponse = getImagesByQuery(term);
   showLoader();
+  const searchResponse = getImagesByQuery(term);
   clearGallery();
   searchResponse
     .then(items => {

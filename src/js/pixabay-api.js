@@ -30,15 +30,7 @@ export function getImagesByQuery(query) {
     safesearch: true,
   }).toString();
 
-  return axios.get(`${basePixabayUrl}?${queryString}`).then(response =>
-    response.data.hits.map(hit => ({
-      preview: hit.webformatURL,
-      original: hit.largeImageURL,
-      description: hit.tags,
-      likes: hit.likes,
-      views: hit.views,
-      comments: hit.comments,
-      downloads: hit.downloads,
-    }))
-  );
+  return axios
+    .get(`${basePixabayUrl}?${queryString}`)
+    .then(response => response.data.hits);
 }
