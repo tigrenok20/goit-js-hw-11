@@ -26,9 +26,10 @@ form.addEventListener('submit', e => {
       if (items.length) {
         createGallery(items);
       } else {
-        iziToast.info({
+        iziToast.error({
           message:
             'Sorry, there are no images matching your search query. Please try again!',
+          position: 'topRight',
         });
       }
       hideLoader();
