@@ -6,8 +6,8 @@ import {
   createGallery,
   hideLoader,
   showLoader,
-} from './render-functions';
-import { getImagesByQuery } from './pixabay-api';
+} from './js/render-functions';
+import { getImagesByQuery } from './js/pixabay-api';
 
 const form = document.querySelector('.form');
 
